@@ -1,0 +1,1 @@
+# boilerplate_eslint_react_18
