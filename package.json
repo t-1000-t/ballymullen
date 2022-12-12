@@ -1,4 +1,5 @@
 {
+  "name": "ballymulenbarracks",
   "author": "VL BR",
   "browserslist": {
     "production": [
@@ -81,7 +82,6 @@
     ]
   },
   "license": "MIT",
-  "name": "booking-app",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
