@@ -7,6 +7,7 @@ module.exports = {
     settings: { react: { version: 'detect' } },
     extends: [
         'airbnb',
+        'prettier',
         'eslint:recommended',
         'plugin:import/recommended',
         'plugin:react/recommended',
@@ -20,13 +21,13 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaFeatures: { jsx: true },
-        ecmaVersion: 2018,
+        ecmaVersion: 'latest',
     },
-    plugins: ['react', '@typescript-eslint', 'react-hooks'],
+    plugins: ['react', 'prettier', '@typescript-eslint', 'react-hooks'],
     rules: {
         'linebreak-style': ['error', 'windows'],
         semi: ['error', 'never'],
-        'arrow-body-style': ['warn', 'as-needed'],
+        'arrow-body-style': ['warn', 'as-needed',  { "requireReturnForObjectLiteral": true }],
         'max-len': ['error', {
             code: 140,
             tabWidth: 2,
@@ -93,7 +94,14 @@ module.exports = {
                 next: ['const', 'let', 'var'],
             },
         ],
-        'no-multiple-empty-lines': 'error',
+        "eol-last": 0,
+        'no-multiple-empty-lines': ['error', { "max": 1, "maxEOF": 0 }],
+        "react/function-component-definition": [
+            2,
+            {
+                namedComponents: ["arrow-function", "function-declaration"]
+            },
+        ],
         'operator-linebreak': [
             'error',
             'after',
@@ -103,6 +111,14 @@ module.exports = {
                     ':': 'before',
                 },
             },
+        ],
+        "jsx-a11y/anchor-is-valid": [
+            "error",
+            {
+                "components": ["Link"],
+                "specialLink": ["hrefLeft", "hrefRight"],
+                "aspects": ["noHref", "invalidHref", "preferButton"]
+            }
         ],
         '@typescript-eslint/no-use-before-define': ['error'],
         'jsx-a11y/label-has-associated-control': ['error', { required: { some: ['nesting', 'id'] } }],

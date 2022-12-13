@@ -2,10 +2,11 @@ import React from 'react'
 
 import logo from 'logo.svg'
 import 'App.css'
+import { Header } from "./components"
 
-function App() {
-  return (
+export const App = () => (
     <div className="App">
+      <Header />
       <header className="App-header">
         THIS VERSION REACT-18 FOR CORRECTLY Eslint!
         <img src={logo} className="App-logo" alt="logo" />
@@ -23,6 +24,5 @@ function App() {
       </header>
     </div>
   )
-}
 
 export default App
