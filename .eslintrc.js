@@ -2,13 +2,14 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    jest: true // Add this line!
+    jest: true, // Add this line!
   },
   settings: {
     react: { version: 'detect' },
     'import/resolver': {
-      "typescript": {}
-    }},
+      typescript: {},
+    },
+  },
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
@@ -27,10 +28,10 @@ module.exports = {
   },
   plugins: ['@typescript-eslint', '@typescript-eslint', 'react-hooks', 'prettier'],
   rules: {
-    "react/react-in-jsx-scope": "off",
-    "spaced-comment": "error",
-    "quotes": ["error", "single"],
-    "no-duplicate-imports": "error",
+    'react/react-in-jsx-scope': 'off',
+    'spaced-comment': 'error',
+    quotes: ['error', 'single'],
+    'no-duplicate-imports': 'error',
     'linebreak-style': ['error', 'windows'],
     'arrow-body-style': ['warn', 'as-needed'],
     'max-len': [
@@ -48,13 +49,11 @@ module.exports = {
     'no-trailing-spaces': 'off',
     'react/jsx-filename-extension': 0,
     'import/prefer-default-export': 0,
-    'import/no-useless-path-segments': 1,
     'import/no-unresolved': 0,
     'import/no-extraneous-dependencies': 0,
     'import/no-named-as-default': 0,
     'import/no-duplicates': 0,
     'import/order': 0,
-    'import/newline-after-import': 1,
     'import/no-named-as-default-member': 0,
     'import/namespace': 0,
     'import/named': 0,
@@ -115,10 +114,7 @@ module.exports = {
       },
     ],
     '@typescript-eslint/no-use-before-define': ['error'],
-    'react/jsx-curly-newline': [
-      'warn',
-      { multiline: 'consistent', singleline: 'forbid' },
-    ],
+    'react/jsx-curly-newline': ['warn', { multiline: 'consistent', singleline: 'forbid' }],
     'react/jsx-one-expression-per-line': 'off',
     'react/require-default-props': 'off',
     'react/forbid-prop-types': 'off',
@@ -137,4 +133,4 @@ module.exports = {
       },
     ],
   },
-};
+}

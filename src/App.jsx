@@ -1,7 +1,7 @@
 import React from 'react'
 import logo from 'logo.svg'
 import 'App.css'
-import { Header} from './components'
+import { Header } from './components'
 
 export const App = () => (
   <div className='App'>
