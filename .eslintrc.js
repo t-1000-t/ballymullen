@@ -125,12 +125,5 @@ module.exports = {
     'object-curly-newline': ['warn', { multiline: true }],
     'no-debugger': 'off',
     'no-restricted-imports': ['warn', { patterns: ['lodash/*', '_', '*../*'] }],
-    'react/function-component-definition': [
-      2,
-      {
-        namedComponents: 'arrow-function',
-        unnamedComponents: 'arrow-function',
-      },
-    ],
   },
 }
