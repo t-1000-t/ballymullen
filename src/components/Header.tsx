@@ -1,20 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
+
 export const Header: React.FC = () => {
-  const newConst = 'variable'
+  const [isShow, setIsShow] = useState(false)
 
   return (
-    <header>
-      <div className='bg-dark collapse show' id='navbarHeader'>
+    <header onClick={() => setIsShow(!isShow)}>
+      <div className={`bg-dark collapse ${isShow ? 'show' : ''}`} id='navbarHeader'>
         <div className='container'>
           <div className='row'>
             <div className='col-sm-8 col-md-7 py-4'>
               <h4 className='text-white'>About</h4>
               <p className='text-muted'>
-                {' '}
-                {newConst} --- Add some information about the album below, the author, or any other
-                background context. Make it a few sentences long so folks can pick up some
-                informative tidbits. Then, link them off to some social networking sites or contact
-                information.
+                Add some information about the album below, the author, or any other background
+                context. Make it a few sentences long so folks can pick up some informative tidbits.
+                Then, link them off to some social networking sites or contact information.
               </p>
             </div>
             <div className='col-sm-4 offset-md-1 py-4'>
