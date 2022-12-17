@@ -31,7 +31,7 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'spaced-comment': 'error',
     quotes: ['error', 'single'],
-    'no-duplicate-imports': 'error',
+    'no-duplicate-imports': ['warn', { includeExports: true }],
     'linebreak-style': ['error', 'windows'],
     'arrow-body-style': ['warn', 'as-needed'],
     'max-len': [
@@ -124,6 +124,6 @@ module.exports = {
     'function-paren-newline': ['warn', 'consistent'],
     'object-curly-newline': ['warn', { multiline: true }],
     'no-debugger': 'off',
-    'no-restricted-imports': ['warn', { patterns: ['lodash/*', '_', '*../*'] }],
+    // 'no-restricted-imports': ['warn', { patterns: ['lodash/*', '_', '*../*'] }],
   },
 }
