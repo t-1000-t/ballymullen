@@ -33,7 +33,6 @@ module.exports = {
     quotes: ['error', 'single'],
     'no-duplicate-imports': ['warn', { includeExports: true }],
     'linebreak-style': ['error', 'windows'],
-    'arrow-body-style': ['warn', 'as-needed'],
     'max-len': [
       'error',
       {
@@ -74,7 +73,6 @@ module.exports = {
     'jsx-a11y/interactive-supports-focus': 0,
     'jsx-a11y/no-autofocus': 0,
     'jsx-a11y/no-noninteractive-element-interactions': 0,
-    'no-shadow': 'warn',
     'no-console': 0,
     'no-restricted-syntax': [
       'error',
@@ -86,21 +84,8 @@ module.exports = {
     ],
     'padding-line-between-statements': [
       'error',
-      {
-        blankLine: 'always',
-        prev: '*',
-        next: 'return',
-      },
-      {
-        blankLine: 'always',
-        prev: ['const', 'let', 'var'],
-        next: '*',
-      },
-      {
-        blankLine: 'any',
-        prev: ['const', 'let', 'var'],
-        next: ['const', 'let', 'var'],
-      },
+      { blankLine: 'always', prev: ['const', 'let', 'var'], next: '*' },
+      { blankLine: 'any', prev: ['const', 'let', 'var'], next: ['const', 'let', 'var'] },
     ],
     'no-multiple-empty-lines': 'error',
     'operator-linebreak': [
@@ -122,8 +107,6 @@ module.exports = {
     'arrow-parens': 'off',
     'dot-notation': 'off',
     'function-paren-newline': ['warn', 'consistent'],
-    'object-curly-newline': ['warn', { multiline: true }],
     'no-debugger': 'off',
-    // 'no-restricted-imports': ['warn', { patterns: ['lodash/*', '_', '*../*'] }],
   },
 }
