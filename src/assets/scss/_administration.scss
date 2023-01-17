@@ -1,0 +1,535 @@
+.custom-table_editing-fields {
+  display: block !important;
+  height: calc(100% - 66px) !important;
+  overflow: auto !important;
+
+  & thead {
+    display: flex;
+    width: 100%;
+    border: none;
+    background-color: #e5e6e6;
+
+    & tr {
+      display: flex;
+      width: 100%;
+
+      & th {
+        width: 50%;
+      }
+    }
+  }
+
+  & tbody {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  & tbody tr {
+    display: flex;
+    width: 100%;
+  }
+  & tbody tr:nth-child(2n+1) {
+    background-color: #f8f9fa;
+  }
+
+  & tbody tr:hover {
+    background-color: #DEEBFF;
+  }
+
+  & td {
+    width: 50%;
+    vertical-align: inherit;
+  }
+}
+.editing-markets {
+  display: flex !important;
+  height: 75vh !important;
+  & .container .table-bordered {
+    & tr {
+      border: none;
+      & td {
+        border: none;
+      }
+    }
+  }
+}
+
+.admin-page,
+.admin-tab {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow: auto;
+}
+
+.admin-page_nav {
+  display: flex;
+  margin: 0;
+  border-bottom: 1px solid lightgrey;
+  background-color: #fbfbfb;
+
+  .admin-page_nav-item {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+
+    .admin-page_nav-link {
+      color: #6C757D;
+      font-size: 16px;
+      border: none;
+      padding: 16px 0;
+      background-color: transparent;
+      &:focus{
+        outline: none;
+      }
+    }
+
+    .admin-page_nav-link.active {
+      color: #212529;
+      font-weight: bold;
+      border-bottom: 2px solid #337AFF;
+    }
+  }
+}
+
+.admin-tab {
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+    height: $toolbar-height;
+    padding: 0 1rem 0 1.5rem;
+    background-color: #323535;
+    transition: margin-top 300ms ease-in;
+
+    .title {
+      flex-grow: 1;
+      color: white;
+      text-transform: uppercase;
+      font-size: 24px;
+      font-family: "Oswald", sans-serif;
+      font-weight: 400;
+
+      .material-icons {
+        margin-left: 12px;
+        vertical-align: bottom;
+      }
+    }
+
+    &_buttons {
+      display: flex;
+    }
+
+    .btn {
+      .material-icons {
+        margin-right: 0.25rem;
+        font-size: 18px;
+        line-height: 24px;
+        vertical-align: top;
+      }
+
+      &-link {
+        color: $white-color;
+        text-decoration: none;
+        box-shadow: none;
+        &:hover {
+          color: rgba($white-color, .9);
+        }
+      }
+    }
+
+    .editable-wrap {
+      margin: -3px -4px 0;
+      .form-group {
+        .select {
+          &__control {
+            min-height: 32px;
+            background-color: transparent;
+          }
+          &__placeholder,
+          &__single-value,
+          &__indicator {
+            color: $white-color;
+          }
+          &__option {
+            color: initial;
+          }
+          &__value-container {
+            font-size: inherit;
+          }
+        }
+
+        & > div.text-ellipsis {
+          line-height: 32px;
+        }
+      }
+
+      .form-label {
+        margin-bottom: 2px;
+        font-size: 11px;
+      }
+    }
+  }
+
+  .editable-wrap {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      min-height: 42px;
+      margin-bottom: 0;
+      padding: 0 4px;
+      .select {
+        &__control {
+          background-color: transparent;
+        }
+        &__value-container {
+          padding: 0 6px;
+
+          [class^="css-"]:not(.select__single-value),
+          [class*="css-"]:not(.select__single-value) {
+            padding: 0;
+            margin: 0;
+          }
+        }
+        &__indicator {
+          width: 28px;
+          padding: 0;
+        }
+        &__dropdown-indicator {
+          svg {
+            path {
+              fill: currentColor;
+            }
+          }
+        }
+      }
+      .form-label {
+        margin-bottom: 0;
+        font-size: 10px;
+        font-weight: 700;
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 12px;
+        color: rgba(255,255,255, .64);
+        @extend .text-ellipsis;
+      }
+      .form-control {
+        height: 24px;
+        padding: 0 6px;
+        line-height: inherit;
+      }
+      .react-datepicker-wrapper {
+        .form-control {
+          width: 160px;
+          min-width: 160px;
+        }
+      }
+      .version-form-control {
+        width: 194px;
+      }
+    }
+  }
+
+  .estimate-topbar {
+    .editable-wrap {
+      & > span,
+      & > div {
+        white-space: nowrap;
+        &:not(:first-child) {
+          margin-left: 12px;
+        }
+      }
+      .form-group {
+        position: relative;
+        padding: 0;
+        margin-top: -6px;
+        .select {
+          &__single-value {
+            line-height: 22px;
+          }
+          &__control {
+            height: 24px;
+            min-height: 24px !important;
+          }
+          &__value-container {
+            [class^="css-"]:not(.select__single-value),
+            [class*="css-"]:not(.select__single-value) {
+              line-height: 22px;
+            }
+          }
+        }
+
+        .invalid-feedback {
+          position: absolute;
+          bottom: -8px;
+          font-size: 10px;
+        }
+      }
+      .form-label {
+        color: rgba(0,0,0, .64);
+      }
+      .geoId-wrap {
+        min-width: 66px;
+      }
+      .race-wrap {
+        min-width: 55px;
+      }
+      .genre-wrap {
+        min-width: 84px;
+      }
+      .unitLen-wrap {
+        min-width: 63px;
+      }
+      .react-datepicker-wrapper {
+        display: flex;
+      }
+    }
+  }
+
+  .search-block{
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fbfbfb;
+
+    .search-block_input-wrapper {
+      margin: 0;
+      padding: 0;
+      width: 700px;
+    }
+
+    &_editing-markets {
+      padding: 0;
+      margin-bottom: 6px;
+
+      &>div {
+        width: 100%;
+
+
+        &>div {
+          margin: 0;
+          height: 40px;
+        }
+      }
+    }
+
+    &_editing-stations {
+      padding: 0;
+      height: 40px;
+      margin: 0 0 6px 0;
+
+      &>div {
+        display: flex;
+        width: 100%;
+        height: 99%;
+
+
+        &>div:first-child {
+          width: 200px;
+          height: 100%;
+          margin-right: 6px;
+        }
+
+        &>div:last-child {
+          height: 100%;
+    margin: 0;
+        }
+      }
+    }
+  }
+
+  .columns-filter {
+
+    &:active {
+      outline: none;
+      box-shadow: none;
+    }
+
+    .columns-filter_btn {
+      border: none;
+      background-color: transparent;
+      margin-right: 20px;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+
+      .columns-filter_btn:focus {
+        outline: none;
+      }
+
+      .material-icons {
+        margin-right: 10px;
+      }
+    }
+
+    .columns-filter_toggle {
+      border: none;
+      background-color: transparent;
+      color: #212529;
+
+      &:hover {
+        color: #808285;
+      }
+    }
+
+    .columns-filter_toggle:after {
+      display: none;
+    }
+
+    .columns-filter_toggle:active,
+    .columns-filter_toggle:focus,
+    .columns-filter_toggle:active:focus {
+      outline: none;
+      box-shadow: none;
+      background-color: transparent;
+    }
+
+    .dropdown-menu {
+      padding: 0.6rem 0.6rem 0;
+    }
+
+    .columns-filter_list {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .admin-tab_pagination {
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+    margin: 0 0 0 auto;
+
+    .admin-tab_pagination-btn {
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      line-height: 1;
+      background-color: white;
+      padding: .45rem .8rem;
+
+      &:focus {
+        outline: none;
+      }
+
+      &.first-last {
+        border-radius: 0.3rem;
+      }
+
+      &.step-back {
+        margin-left: 10px;
+        border-top-left-radius: 0.3rem;
+        border-bottom-left-radius: 0.3rem;
+        border-right: none;
+      }
+
+      &.step-forward {
+        margin-right: 10px;
+        border-top-right-radius: 0.3rem;
+        border-bottom-right-radius: 0.3rem;
+      }
+
+      &.page-number {
+        border-right: none;
+      }
+    }
+  }
+}
+
+.modal-dialog {
+  .form-region {
+    position: relative;
+    padding: 1rem;
+    border: .1rem solid #ececec;
+    border-radius: 8px;
+    margin-top: 0.5rem;
+  }
+
+  .form-group {
+    margin-bottom: 0.75rem;
+
+    .meas-value {
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      &input[type=number] {
+        -moz-appearance: textfield;
+      }
+        text-align: end;
+    }
+
+    .select-custom.is-invalid {
+      .select__control {
+        border-color: #dc3545;
+      }
+
+      .select__control--is-focused {
+        box-shadow: 0 0 0 1px #dc3545;
+      }
+    }
+  }
+
+  .react-datepicker-wrapper {
+    width: 100%;
+  }
+
+  .react-datepicker-ignore-onclickoutside {
+    max-width: 100%;
+  }
+
+  .custom-file-label {
+    color: #6C757D !important
+  }
+
+  .date-block {
+    max-width: 50%;
+    padding-left: 15px;
+  }
+
+  .dates-label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    padding-left: 15px;
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    color: #989a9b;
+  }
+
+  .form-group-content-right {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0.75rem 0 1.5rem;
+    border-bottom: 1px solid $border-color;
+
+    .btn-link {
+      &:hover, &:focus {
+        text-decoration: none;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .form-check-label {
+    font-weight: 400;
+  }
+}
+
+.metadata-demo {
+  display: flex;
+  width: 50px;
+  justify-content: center;
+}

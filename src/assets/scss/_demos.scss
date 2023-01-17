@@ -1,0 +1,116 @@
+.demos {
+  &-menu {
+    box-sizing: border-box;
+    width: 310px;
+    padding: 0 !important;
+    border: 1px solid #B7B7B7;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.24);
+    transform: translate(0px, 30px);
+  }
+
+  &-nav {
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+    &__item {
+      font-size: 12px;
+      font-weight: 700;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      &:not(:last-child) {
+        margin-right: 16px;
+        margin-left: 12px;
+      }
+
+      &:focus{
+        outline: none;
+      }
+
+      &.active {
+        border-bottom: 2px solid $primary;
+      }
+
+      &:not(.active) {
+        color: rgba($body-color, 0.64);
+      }
+    }
+
+    &__link {
+      padding: 10px 0;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 17px;
+      color: inherit;
+      border: none;      
+      background-color: transparent;
+    }
+  }
+
+  &-section {
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
+    // padding-left: 12px;
+
+    &__column {
+      padding: 0 8px 4px;
+
+      &-header {
+        padding: 8px 4px 0;
+        color: rgba($body-color, 0.64);
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: 0;
+        line-height: 24px;
+      }
+
+      &:nth-child(2) {
+        border-left: 1px solid #CCCCCC;
+        border-right: 1px solid #CCCCCC;
+      }
+
+      &:nth-child(1) {
+        min-width: 100px;
+      }
+
+      &-item {
+        border: none;
+        outline: none;
+        padding: 0 4px;
+        background-color: #FFFFFF;
+        font-size: 13px;
+        letter-spacing: 0;
+        line-height: 28px;
+
+        &.active {
+          border-radius: 4px;
+          background-color: $primary;
+          color: #FFFFFF;
+          font-weight: 700;
+        }
+
+        &[disabled] {
+          color: rgba($body-color, 0.4);
+        }
+      }
+    }
+  }
+
+  &-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.75rem;
+
+    & > .btn{
+      &:first-child {
+        margin-right: 8px;
+      }
+    }
+  }
+}

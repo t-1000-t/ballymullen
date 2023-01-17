@@ -1,0 +1,356 @@
+.dashboard {
+  &-body {
+    padding: 0.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+
+    & > .row {
+      margin-right: -4px;
+      margin-left: -4px;
+    }
+  }
+
+  &-column {
+    padding-right: 4px;
+    padding-left: 4px;
+    margin-bottom: 0.5rem;
+
+    .accordion {
+      & > .card {
+        box-shadow: 0 1px 4px 0 rgba(0,0,0,0.24);
+        &:hover {          
+          box-shadow: 0 4px 16px 0 rgba(0,0,0,0.32);
+        }
+      }
+    }    
+
+    .individual-card {
+      &.greyed{
+        background-color: #e5e6e6;
+      }
+      // overflow: hidden;
+      &.head {
+        border: 1px solid transparent;
+        overflow: hidden;
+      }
+      [class^="item-"]:not(.item-version):not(.item-updates), 
+      [class*=" item-"]:not(.item-version):not(.item-updates) {
+        overflow: hidden;
+      }
+      .item-orders {
+        .btn {
+          min-width: inherit;
+        }
+      }
+
+      .item {
+        &-version {
+          flex: 0 0 108px;
+
+          .dropdown {
+            max-width: calc(108px - 24px);
+            @extend .multiple-elements-dropdown;
+          }
+        }
+        &-updates {
+          flex: 0 0 136px;
+
+          .dropdown {
+            max-width: calc(136px - 24px);
+            @extend .multiple-elements-dropdown;
+          }
+        }
+        &-notes {
+          flex: 0 0 60px;
+          & > span {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 700;
+            line-height: 22px;
+            color: $primary;
+            border-radius: 50%;
+            background-color: rgba($primary, 0.12);
+          }
+        }
+      }
+    }
+  }
+
+  .multiple-elements-dropdown {
+    display: flex;
+    flex-direction: column;
+
+    .btn-default > div {
+      display: flex;
+      overflow: hidden;
+
+      & > span:first-child {
+        padding-right: 4px;
+        @extend .text-ellipsis;
+      }
+
+      & > span:not(:first-child) {
+        color: $primary;
+      }
+    }
+  }
+
+  .small-text {
+    font-size: 0.625rem;
+    font-weight: 700;
+  }
+  
+  &-title {
+    padding: 0.5rem 0.75rem;
+    margin: 0;
+    font-size: 1.063rem;
+    font-weight: 700;
+    line-height: 24px;
+    text-transform: uppercase;
+    &.bg-grey {
+      margin-bottom: 0.5rem;
+      background-color: $gray-color;
+    }
+
+    .amount-items {
+      margin-left: 0.25rem;
+      opacity: 0.64;
+      &::before {
+        content: '(';
+      }
+      &::after {
+        content: ')';
+      }
+    }
+  }
+}
+
+.btn-grey {
+  color: #989a9b;
+}
+
+.outletsTable {
+  position: absolute;
+  background-color: white;
+  margin: 20px;
+  border-radius: 4px;
+  max-width: 100%;
+}
+
+.outletsTable_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid lightgrey;
+  padding: 20px;
+}
+
+
+.outletsTable_header-title {
+  margin: 0 30px 0 0;
+}
+
+.outletsTable_header-search {
+  display: flex;
+  align-items: center;
+}
+
+.outletsTable_btn {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 130px;
+  height: 46px;
+}
+
+.outletsTable_btn:not(:last-child) {
+  margin-right: 16px;
+}
+
+.outletsTable_btnGroup {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+.outletsTable_header-cell,
+.outletsTable_table-cell {
+  font-size: 14px;
+  margin: 0;
+}
+
+.outletsTable_header-cell {
+  font-weight: 700;
+  padding: 1rem 0.5rem;
+}
+
+.outletsTable_table-cell {
+  font-weight: 400;
+  padding: 0.5rem 0.5rem;
+  cursor: default;
+  color: rgb(84, 84, 84);
+  position: relative;
+}
+
+
+.outletsTable_input {
+  width: 400px;
+  border: 1.5px solid #cccccc;
+  border-radius: 4px;
+  height: 46px;
+  margin: 0 20px 0 0;
+  padding-left: 12px;
+}
+
+.outletsTable_editableField {
+  border: none;
+  padding: 0;
+}
+
+.outletsTable_editableField:focus {
+  outline: none;
+}
+
+.outletsTable_editableField:disabled {
+  background-color: white;
+}
+
+.outletsTable_row {
+  border-bottom: 1px solid lightgrey;
+}
+
+.outletsTable_row-active {
+  background-color: #f2f7f7;
+  border-bottom: 1px solid lightgrey;
+  & td {
+    color: black;
+  }
+  .editableField_box {
+    position: absolute;
+    left: 0.5rem;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  & .outletsTable_editableField {
+    color: black;
+    background-color: #f2f7f7;
+    height: 100%;
+    width: 100%;
+    border-bottom: 1px solid transparent;
+  }
+  .inp-border {
+    &:after {
+      width: 100%;
+      height: 1px;
+      position: absolute;
+      content: '';
+      bottom: -1px;
+      background-color: blue;
+      left: 0;
+      z-index: 1;
+    }
+  }
+}
+
+//////////////////
+
+.user-role-menu {
+  display: none;
+}
+
+.user-role-menu.show {
+  display: block;
+  position: relative !important;
+  transform: none !important;
+}
+
+.user-role-menu {
+  border: none;
+  background-color: white;
+  &:focus{
+    outline: none;
+    // background-color: #f8f9fa;
+  }
+}
+
+.role-menu {
+  display: flex;
+  align-items: center;
+  background: inherit;
+  border: 0;
+  border-radius: 0;
+  color: inherit;
+  box-shadow: none;
+  text-align: left;
+  width: 300px;
+  padding: 8px 30px 8px 25px;
+}
+
+.role-menu.btn.dropdown-toggle:focus {
+  background-color: inherit;
+  color: inherit;
+  outline: none;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.account-menu_dropdown {
+  width: content-box;
+  margin-right: 10px;
+  border-radius: 4px;
+
+  .role-menu {
+    &:after {
+      position: absolute;
+      right: 16px;
+      border: 0;
+      border-right: 2px solid $avatar-bg-color;
+      border-bottom: 2px solid $avatar-bg-color;
+      width: 8px;
+      height: 8px;
+      transform: rotate(45deg);
+    }
+  }
+
+  .dropdown-item:active,
+  .show > .btn-primary.dropdown-toggle,
+  .btn-primary:not(:disabled):not(.disabled).active {
+    background-color: inherit;
+    color: inherit;
+  }
+}
+
+.role-menu_user-roles {
+  position: relative;
+  .dropdown-item {
+    padding-left: 40px;
+  }
+}
+
+.role-menu_main-role {
+  background-color: $dropdown-item-active;
+  &.dropdown-item {
+    &:hover {
+      background-color: $dropdown-item-active;
+    }
+  }
+}
+
+.role-menu_dropdown:not(.show):hover,
+.role-menu:hover {
+  background-color: $dropdown-item-hover;
+}
+
+.role-menu.btn:hover {
+  color: inherit;
+}
+
+.dropdown-item.active .user-role-menu.active {
+  background-color: $dropdown-item-active;
+  color: inherit;
+}
