@@ -1,14 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-// import 'assets/scss/style.scss'
+import { BrowserRouter } from 'react-router-dom'
+// import './assets/scss/style.scss'
 import { App } from './App'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root'),
 )
-
-// export * from './NavigationRouting'
-// export * from './ProvideAuth'

@@ -1,23 +1,25 @@
 import React from 'react'
-import { Portal } from './components/Portal'
-import { ToastContainer } from 'react-toastify'
-import { Provider } from 'react-redux'
-import { store } from './store'
-// import { store } from 'store'
-// import { ProvideAuth, NavigationRouting } from '.'
-
-// import 'react-toastify/dist/ReactToastify.css'
+import Navigation from './components/Navigation'
+import './App.css'
+import { Route, Switch } from 'react-router'
+import { HomeView, NotFoundView, AboutView } from './views'
 
 export const App = () => (
-  <>
-    <Portal>
-      <ToastContainer icon={false} />
-    </Portal>
-    <Provider store={store}>
-      {/* <ProvideAuth> */}
-      {/* <NavigationRouting /> */}
-      {/* </ProvideAuth> */}
-    </Provider>
-    !!!!!
-  </>
+  <div className='container'>
+    <Navigation />
+
+    <Switch>
+      <Route path='/' exact>
+        <HomeView />
+      </Route>
+
+      <Route path='/about'>
+        <AboutView />
+      </Route>
+
+      <Route>
+        <NotFoundView />
+      </Route>
+    </Switch>
+  </div>
 )
