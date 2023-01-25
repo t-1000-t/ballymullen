@@ -1,3 +1,5 @@
 export * from './HomeView'
 export * from './AboutView'
 export * from './NotFoundView'
+export * from './ImagesView'
+export * from './VideoView'
