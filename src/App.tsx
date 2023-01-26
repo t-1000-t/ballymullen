@@ -1,6 +1,5 @@
 import React from 'react'
 import Navigation from './components/Navigation'
-import './App.css'
 import { Route, Switch } from 'react-router'
 import { HomeView, NotFoundView, AboutView, ImagesView, VideoView } from './views'
 
