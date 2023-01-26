@@ -27,7 +27,7 @@ module.exports = {
     'spaced-comment': 'error',
     quotes: ['error', 'single'],
     'no-duplicate-imports': ['warn', { includeExports: true }],
-    'linebreak-style': ['error', 'windows'],
+    // 'linebreak-style': ['error', 'windows'],
     'max-len': [
       'error',
       {
