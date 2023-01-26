@@ -14,8 +14,6 @@ export const VideoView = () => {
     getVideos('fish', 1).then(setVideos)
   }, [])
 
-  console.log('videos', videos)
-
   return (
     <div className='container'>
       <div className='row row-cols-1 row-cols-md-2 g-4'>
