@@ -58,6 +58,7 @@ module.exports = {
     'react/jsx-props-no-spreading': 0,
     '@typescript-eslint/explicit-function-return-type': 0,
     '@typescript-eslint/explicit-module-boundary-types': 0,
+    '@typescript-eslint/no-non-null-assertion': 'warn',
     '@typescript-eslint/no-explicit-any': 0,
     '@typescript-eslint/ban-ts-ignore': 0,
     '@typescript-eslint/camelcase': 0,
