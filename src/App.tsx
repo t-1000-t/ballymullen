@@ -1,7 +1,13 @@
-import * as React from 'react'
+import 'react'
 import Navigation from './components/Navigation'
 import { Route, Switch } from 'react-router'
-import { HomeView, NotFoundView, AboutView, ImagesView, VideoView } from './views'
+import {
+  HomeView,
+  NotFoundView,
+  AboutView,
+  ImagesView,
+  VideoView,
+} from './views'
 import 'react-toastify/dist/ReactToastify.css'
 import './assets/scss/_app.scss'
 

@@ -1,4 +1,4 @@
-import * as React from 'react'
+import 'react'
 import { NavLink } from 'react-router-dom'
 
 const Navigation = () => (
